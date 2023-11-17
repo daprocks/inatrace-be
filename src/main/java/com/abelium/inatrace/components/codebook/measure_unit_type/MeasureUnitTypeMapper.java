@@ -45,6 +45,8 @@ public final class MeasureUnitTypeMapper {
 		ApiMeasureUnitType apiMeasureUnitType = MeasureUnitTypeMapper.toApiMeasureUnitTypeBase(entity);
 
 		apiMeasureUnitType.setWeight(entity.getWeight());
+		apiMeasureUnitType.setQuantity(entity.getQuantity());
+		apiMeasureUnitType.setAggregateByWeight(entity.getAggregateByWeight());
 
 		if (entity.getUnderlyingMeasurementUnitType() != null) {
 			apiMeasureUnitType.setUnderlyingMeasurementUnitType(

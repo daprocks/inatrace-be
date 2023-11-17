@@ -106,6 +106,7 @@ public class ProcessingOrderService extends BaseService {
                 return createOrUpdateQuoteOrder(entity, apiProcessingOrder, user, language);
 
             case PROCESSING:
+            case PACKAGING:
             case FINAL_PROCESSING:
             case GENERATE_QR_CODE:
 

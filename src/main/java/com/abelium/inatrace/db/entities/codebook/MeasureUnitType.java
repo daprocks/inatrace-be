@@ -15,6 +15,8 @@ import java.math.BigDecimal;
 public class MeasureUnitType extends CodebookBaseEntity {
 
 	private BigDecimal weight;
+	private int Quantity;
+	private Boolean AggregateByWeight;
 
 	@ManyToOne
 	private MeasureUnitType underlyingMeasurementUnitType;
@@ -43,4 +45,22 @@ public class MeasureUnitType extends CodebookBaseEntity {
 	public void setUnderlyingMeasurementUnitType(MeasureUnitType underlyingMeasurementUnitType) {
 		this.underlyingMeasurementUnitType = underlyingMeasurementUnitType;
 	}
+	
+	public int getQuantity() {
+		return Quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		Quantity = quantity;
+	}
+
+	public Boolean getAggregateByWeight() {
+		return AggregateByWeight;
+	}
+
+	public void setAggregateByWeight(Boolean aggregateByWeight) {
+		AggregateByWeight = aggregateByWeight;
+	}
+	
+	
 }

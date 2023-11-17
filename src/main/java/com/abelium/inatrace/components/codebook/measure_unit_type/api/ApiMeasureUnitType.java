@@ -16,8 +16,14 @@ public class ApiMeasureUnitType extends ApiCodebookBaseEntity {
 
 	@ApiModelProperty(value = "the weight of the measurement unit type", position = 3)
 	private BigDecimal weight;
+	
+	@ApiModelProperty(value = "units quantity", position = 4)
+	private int quantity;
+	
+	@ApiModelProperty(value = "aggregate by weight 1 or quantity 0", position = 5)
+	private Boolean aggregateByWeight;
 
-	@ApiModelProperty(value = "the underlying measurement unit type", position = 4)
+	@ApiModelProperty(value = "the underlying measurement unit type", position = 6)
 	private ApiMeasureUnitType underlyingMeasurementUnitType;
 
 	public BigDecimal getWeight() {
@@ -26,6 +32,22 @@ public class ApiMeasureUnitType extends ApiCodebookBaseEntity {
 
 	public void setWeight(BigDecimal weight) {
 		this.weight = weight;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public Boolean getAggregateByWeight() {
+		return aggregateByWeight;
+	}
+
+	public void setAggregateByWeight(Boolean aggregateByWeight) {
+		this.aggregateByWeight = aggregateByWeight;
 	}
 
 	public ApiMeasureUnitType getUnderlyingMeasurementUnitType() {

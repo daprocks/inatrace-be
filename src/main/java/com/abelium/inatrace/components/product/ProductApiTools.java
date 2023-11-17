@@ -245,6 +245,9 @@ public class ProductApiTools {
 		apiBusinessToCustomerSettings.setTextColor(businessToCustomerSettings.getTextColor());
 		apiBusinessToCustomerSettings.setTabFairPrices(businessToCustomerSettings.getTabFairPrices());
 		apiBusinessToCustomerSettings.setTabFeedback(businessToCustomerSettings.getTabFeedback());
+		apiBusinessToCustomerSettings.setTabBpapp(businessToCustomerSettings.getTabBpapp());
+		apiBusinessToCustomerSettings.setBpappId(businessToCustomerSettings.getBpappId());
+		apiBusinessToCustomerSettings.setOrderBpapp(businessToCustomerSettings.getOrderBpapp());
 		apiBusinessToCustomerSettings.setTabProducers(businessToCustomerSettings.getTabProducers());
 		apiBusinessToCustomerSettings.setTabQuality(businessToCustomerSettings.getTabQuality());
 		apiBusinessToCustomerSettings.setOrderFairPrices(businessToCustomerSettings.getOrderFairPrices());
@@ -349,6 +352,9 @@ public class ProductApiTools {
 			apiBusinessToCustomerSettings.setTabProducers(Boolean.TRUE);
 			apiBusinessToCustomerSettings.setTabQuality(Boolean.TRUE);
 			apiBusinessToCustomerSettings.setTabFeedback(Boolean.TRUE);
+			apiBusinessToCustomerSettings.setTabBpapp(Boolean.FALSE);
+			apiBusinessToCustomerSettings.setBpappId(-1);
+			apiBusinessToCustomerSettings.setOrderBpapp(5);
 			apiBusinessToCustomerSettings.setOrderFairPrices(1L);
 			apiBusinessToCustomerSettings.setOrderProducers(2L);
 			apiBusinessToCustomerSettings.setOrderQuality(3L);
@@ -463,6 +469,9 @@ public class ProductApiTools {
 		b2c.setTabFeedback(ab2c.getTabFeedback());
 		b2c.setTabProducers(ab2c.getTabProducers());
 		b2c.setTabQuality(ab2c.getTabQuality());
+		b2c.setTabBpapp(ab2c.getTabBpapp());
+		b2c.setBpappId(ab2c.getBpappId());
+		b2c.setOrderBpapp(ab2c.getOrderBpapp());
 
 		b2c.setOrderFairPrices(ab2c.getOrderFairPrices());
 		b2c.setOrderFeedback(ab2c.getOrderFeedback());
@@ -792,6 +801,9 @@ public class ProductApiTools {
 		b2cSettings.setWorldMarket(b2cSettingsProduct.getWorldMarket());
 		b2cSettings.setFairTrade(b2cSettingsProduct.getFairTrade());
 		b2cSettings.setAverageRegionFarmGatePrice(b2cSettingsProduct.getAverageRegionFarmGatePrice());
+		b2cSettings.setTabBpapp(b2cSettingsProduct.getTabBpapp());
+		b2cSettings.setBpappId(b2cSettingsProduct.getBpappId());
+		b2cSettings.setOrderBpapp(b2cSettingsProduct.getOrderBpapp());
 
 		// If product label defines values, overwrite settings from product
 		BusinessToCustomerSettings b2cSettingsProductLabel = productLabel.getContent().getBusinessToCustomerSettings();
@@ -824,6 +836,9 @@ public class ProductApiTools {
 		if (b2cSettingsProductLabel.getTabFeedback() != null) {
 			b2cSettings.setTabFeedback(b2cSettingsProductLabel.getTabFeedback());
 		}
+		if (b2cSettingsProductLabel.getTabBpapp() != null) {
+			b2cSettings.setTabBpapp(b2cSettingsProductLabel.getTabBpapp());
+		}
 		if (b2cSettingsProductLabel.getTabProducers() != null) {
 			b2cSettings.setTabProducers(b2cSettingsProductLabel.getTabProducers());
 		}
@@ -836,6 +851,12 @@ public class ProductApiTools {
 		}
 		if (b2cSettingsProductLabel.getOrderFeedback() != null) {
 			b2cSettings.setOrderFeedback(b2cSettingsProductLabel.getOrderFeedback());
+		}
+		if (b2cSettingsProductLabel.getOrderBpapp() != 0) {
+			b2cSettings.setOrderBpapp(b2cSettingsProductLabel.getOrderBpapp());
+		}
+		if (b2cSettingsProductLabel.getBpappId() > 0) {
+			b2cSettings.setBpappId(b2cSettingsProductLabel.getBpappId());
 		}
 		if (b2cSettingsProductLabel.getOrderProducers() != null) {
 			b2cSettings.setOrderProducers(b2cSettingsProductLabel.getOrderProducers());

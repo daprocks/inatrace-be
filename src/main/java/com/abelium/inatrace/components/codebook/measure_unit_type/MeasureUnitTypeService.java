@@ -78,6 +78,8 @@ public class MeasureUnitTypeService extends BaseService {
 		}
 		entity.setLabel(apiMeasureUnitType.getLabel());
 		entity.setWeight(apiMeasureUnitType.getWeight());
+		entity.setQuantity(apiMeasureUnitType.getQuantity());
+		entity.setAggregateByWeight(apiMeasureUnitType.getAggregateByWeight() == null? false : apiMeasureUnitType.getAggregateByWeight());
 
 		if (apiMeasureUnitType.getUnderlyingMeasurementUnitType() != null &&
 				apiMeasureUnitType.getUnderlyingMeasurementUnitType().getId() != null &&

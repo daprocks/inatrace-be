@@ -251,6 +251,15 @@ public class StockOrder extends TimestampEntity {
 	// Generated ID provided by the client; This is used to group repacked stock orders when doing repacking with multiple outputs
 	@Column
 	private String repackedOriginStockOrderId;
+	
+	@Column
+	private int harvestRecord;
+	
+	@Column
+	private String lotes;
+	
+	@Column
+	private String bloques;
 
 	public User getCreatedBy() {
 		return createdBy;
@@ -698,4 +707,29 @@ public class StockOrder extends TimestampEntity {
 	public void setDamagedWeightDeduction(BigDecimal damagedWeightDeduction) {
 		this.damagedWeightDeduction = damagedWeightDeduction;
 	}
+
+	public int getHarvestRecord() {
+		return harvestRecord;
+	}
+
+	public void setHarvestRecord(int harvestRecord) {
+		this.harvestRecord = harvestRecord;
+	}
+
+	public String getLotes() {
+		return lotes;
+	}
+
+	public void setLotes(String lotes) {
+		this.lotes = lotes;
+	}
+
+	public String getBloques() {
+		return bloques;
+	}
+
+	public void setBloques(String bloques) {
+		this.bloques = bloques;
+	}
+	
 }

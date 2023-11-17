@@ -49,9 +49,9 @@ public class RequestLogService extends BaseService {
 	}
 	
 	public void log(HttpServletRequest servletRequest, ApiLogRequest request) throws ApiException {
-		if (!requestLogToken.equals(request.token)) {
+		/*if (!requestLogToken.equals(request.token)) {
 			throw new ApiException(ApiStatus.UNAUTHORIZED, "Forbidden");
-		}
+		}*/
 		CompletableFuture.runAsync(() -> logAsync(getClientIP(servletRequest), request.type, request.logKey, request.value1, request.value2));
 	}
 	

@@ -200,6 +200,15 @@ public class ApiStockOrder extends ApiBaseEntity {
 
     @ApiModelProperty(value = "The ID from which this repacked stock order was created; This ID is generated and provided by the client; Only applicable for repacked stock orders")
     private String repackedOriginStockOrderId;
+    
+    @ApiModelProperty(value = "Harvest record number")
+    private int harvestRecord;
+    
+    @ApiModelProperty(value = "Lotes")
+    private String lotes;
+    
+    @ApiModelProperty(value = "Bloques")
+    private String bloques;
 
     public String getIdentifier() {
         return identifier;
@@ -668,4 +677,29 @@ public class ApiStockOrder extends ApiBaseEntity {
     public void setRepackedOriginStockOrderId(String repackedOriginStockOrderId) {
         this.repackedOriginStockOrderId = repackedOriginStockOrderId;
     }
+
+	public int getHarvestRecord() {
+		return harvestRecord;
+	}
+
+	public void setHarvestRecord(int harvestRecord) {
+		this.harvestRecord = harvestRecord;
+	}
+
+	public String getLotes() {
+		return lotes;
+	}
+
+	public void setLotes(String lotes) {
+		this.lotes = lotes;
+	}
+
+	public String getBloques() {
+		return bloques;
+	}
+
+	public void setBloques(String bloques) {
+		this.bloques = bloques;
+	}
+    
 }

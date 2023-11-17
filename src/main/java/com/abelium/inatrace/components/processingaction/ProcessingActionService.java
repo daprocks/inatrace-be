@@ -263,10 +263,10 @@ public class ProcessingActionService extends BaseService {
 		}
 
 		// Validate that estimated quantity is not provided if we don't have processing action type 'PROCESSING'
-		if (!apiProcessingAction.getType().equals(ProcessingActionType.PROCESSING) &&
+		if (!(apiProcessingAction.getType().equals(ProcessingActionType.PROCESSING) || apiProcessingAction.getType().equals(ProcessingActionType.PACKAGING)) &&
 				apiProcessingAction.getEstimatedOutputQuantityPerUnit() != null) {
 			throw new ApiException(ApiStatus.INVALID_REQUEST,
-					"Estimated output quantity cannot be provided when action is not 'PROCESSING'");
+					"Estimated output quantity cannot be provided when action is not 'PROCESSING' or 'PACKAGING'");
 		}
 
 		// If repack output for final product is selected, validate that maximum output quantity is provided
@@ -279,6 +279,7 @@ public class ProcessingActionService extends BaseService {
 
 		switch (apiProcessingAction.getType()) {
 			case PROCESSING:
+			case PACKAGING:
 
 				// Validate input semi-product
 				if (apiProcessingAction.getInputSemiProduct() == null || apiProcessingAction.getInputSemiProduct().getId() == null) {
@@ -355,6 +356,7 @@ public class ProcessingActionService extends BaseService {
 
 		switch (apiProcessingAction.getType()) {
 			case PROCESSING:
+			case PACKAGING:
 
 				// Set the input semi-product
 				inputSemiProduct = semiProductService.fetchSemiProduct(apiProcessingAction.getInputSemiProduct().getId());

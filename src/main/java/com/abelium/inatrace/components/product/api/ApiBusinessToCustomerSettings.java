@@ -21,6 +21,9 @@ public class ApiBusinessToCustomerSettings extends ApiTimestampEntity {
     private Boolean tabProducers;
     private Boolean tabQuality;
     private Boolean tabFeedback;
+    private Boolean tabBpapp;
+    private int bpappId;
+    private int orderBpapp;
 
     private Long orderFairPrices;
     private Long orderProducers;
@@ -294,5 +297,29 @@ public class ApiBusinessToCustomerSettings extends ApiTimestampEntity {
     public void setAverageRegionFarmGatePrice(BigDecimal averageRegionFarmGatePrice) {
         this.averageRegionFarmGatePrice = averageRegionFarmGatePrice;
     }
+
+	public Boolean getTabBpapp() {
+		return tabBpapp;
+	}
+
+	public void setTabBpapp(Boolean tabBpapp) {
+		this.tabBpapp = tabBpapp;
+	}
+
+	public int getBpappId() {
+		return bpappId;
+	}
+
+	public void setBpappId(int bpappId) {
+		this.bpappId = bpappId;
+	}
+
+	public int getOrderBpapp() {
+		return orderBpapp;
+	}
+
+	public void setOrderBpapp(int orderBpapp) {
+		this.orderBpapp = orderBpapp;
+	}
 
 }

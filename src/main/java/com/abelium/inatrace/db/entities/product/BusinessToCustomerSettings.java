@@ -47,6 +47,15 @@ public class BusinessToCustomerSettings extends TimestampEntity {
 
     @Column(name = "tab_feedback")
     private Boolean tabFeedback;
+    
+    @Column(name = "tab_bpapp")
+    private Boolean tabBpapp;
+    
+    @Column(name = "bpapp_id")
+    private int bpappId;
+    
+    @Column(name = "orderBpapp")
+    private int orderBpapp;
 
     @Column(name = "order_fair_prices")
     private Long orderFairPrices;
@@ -358,7 +367,31 @@ public class BusinessToCustomerSettings extends TimestampEntity {
         this.averageRegionFarmGatePrice = averageRegionFarmGatePrice;
     }
 
-    public BusinessToCustomerSettings copy() {
+    public Boolean getTabBpapp() {
+		return tabBpapp;
+	}
+
+	public void setTabBpapp(Boolean tabBpaap) {
+		this.tabBpapp = tabBpaap;
+	}
+
+	public int getBpappId() {
+		return bpappId;
+	}
+
+	public void setBpappId(int bpaapId) {
+		this.bpappId = bpaapId;
+	}
+
+	public int getOrderBpapp() {
+		return orderBpapp;
+	}
+
+	public void setOrderBpapp(int orderBpapp) {
+		this.orderBpapp = orderBpapp;
+	}
+
+	public BusinessToCustomerSettings copy() {
 
         BusinessToCustomerSettings businessToCustomerSettings = new BusinessToCustomerSettings();
 
@@ -375,6 +408,9 @@ public class BusinessToCustomerSettings extends TimestampEntity {
         businessToCustomerSettings.setTabProducers(getTabProducers());
         businessToCustomerSettings.setTabQuality(getTabQuality());
         businessToCustomerSettings.setTabFeedback(getTabFeedback());
+        businessToCustomerSettings.setTabBpapp(getTabBpapp());
+        businessToCustomerSettings.setBpappId(getBpappId());
+        businessToCustomerSettings.setOrderBpapp(getOrderBpapp());
 
         businessToCustomerSettings.setOrderFairPrices(getOrderFairPrices());
         businessToCustomerSettings.setOrderFeedback(getOrderFeedback());

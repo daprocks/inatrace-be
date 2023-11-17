@@ -60,7 +60,11 @@ public class StockOrderMapper {
         // Collector
         apiStockOrder.setRepresentativeOfProducerUserCustomer(
                 UserCustomerMapper.toApiUserCustomerBase(entity.getRepresentativeOfProducerUserCustomer()));
-
+        
+        apiStockOrder.setHarvestRecord(entity.getHarvestRecord());
+        apiStockOrder.setLotes(entity.getLotes());
+        apiStockOrder.setBloques(entity.getBloques());
+        
         return apiStockOrder;
     }
 

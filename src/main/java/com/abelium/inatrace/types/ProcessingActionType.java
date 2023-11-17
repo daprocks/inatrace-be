@@ -19,6 +19,7 @@ package com.abelium.inatrace.types;
  */
 public enum ProcessingActionType {
     PROCESSING,
+    PACKAGING,
     FINAL_PROCESSING,
     SHIPMENT,
     TRANSFER,

@@ -1030,6 +1030,10 @@ public class StockOrderService extends BaseService {
             stockOrderLocation.setPinName(apiProdLocation.getPinName());
             entity.setProductionLocation(stockOrderLocation);
         }
+        
+        entity.setHarvestRecord(apiStockOrder.getHarvestRecord());
+        entity.setLotes(apiStockOrder.getLotes());
+        entity.setBloques(apiStockOrder.getBloques());
 
         switch (apiStockOrder.getOrderType()) {
             case PURCHASE_ORDER:
